@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for ms-VM-Command" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="core-api" />
+        <module name="ms-VM-Command" />
+        <module name="ms-Query-Mongo" />
+        <module name="ms-DataCenter-Command" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="core-api" options="-parameters" />
+      <module name="ms-DataCenter-Command" options="-parameters" />
+      <module name="ms-Query-Mongo" options="-parameters" />
+      <module name="ms-VM-Command" options="-parameters" />
+    </option>
+  </component>
+</project>
