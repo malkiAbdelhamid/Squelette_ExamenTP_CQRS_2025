@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "0fa7be23-4ba0-465f-86c5-58c03186f755",
+		"name": "ExamenTP-CQRS-2025",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15255541"
+	},
+	"item": [
+		{
+			"name": "Add DataCenter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idDataCenter\":\"1\",\r\n    \"ville\":\"oran\",\r\n    \"capacity\":\"100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9081/command/datacenter",
+					"host": [
+						"localhost"
+					],
+					"port": "9081",
+					"path": [
+						"command",
+						"datacenter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Serveur",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idServeur\":\"1\",\r\n     \"configuration\":{\r\n           \"cpu\":\"10\",   \"ram\":\"160\", \"disk\":\"1000\"\r\n                       }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9081/command/datacenter/1/serveur",
+					"host": [
+						"localhost"
+					],
+					"port": "9081",
+					"path": [
+						"command",
+						"datacenter",
+						"1",
+						"serveur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete serveur",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9081/command/datacenter/1/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9081",
+					"path": [
+						"command",
+						"datacenter",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUtilisateur\":\"100\",\r\n    \"nom\":\"malki\",\r\n    \"email\":\"a.malki@esi-sba.dz\"\r\n}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9080/command/utilisateur",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"command",
+						"utilisateur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Vm",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idVm\":\"2\",\r\n    \"configuration\":{\r\n           \"cpu\":\"25\",   \"ram\":\"106\", \"disk\":\"100\"\r\n                       },\r\n     \"idServeur\" :\"1\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9080/command/utilisateur/100/vm",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"command",
+						"utilisateur",
+						"100",
+						"vm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteVM",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Show status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9082/statuses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9082",
+					"path": [
+						"statuses"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
